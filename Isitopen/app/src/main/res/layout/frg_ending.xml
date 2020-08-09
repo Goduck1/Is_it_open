@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectedStore">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/storeName"
+        android:layout_width="162dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="36dp"
+        android:text="Ending Screen"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/RunningTime"
+        android:layout_width="91dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="152dp"
+        android:text="Time"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/LocationInfo"
+        android:layout_width="86dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="300dp"
+        android:text="Location"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RunningTime" />
+
+    <TextView
+        android:id="@+id/Link"
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="100dp"
+        android:text="Link"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LocationInfo" />
+
+    <TextView
+        android:id="@+id/Link_ID"
+        android:layout_width="252dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="20dp"
+        android:text="aaaaaa@naver.com"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Link"
+        app:layout_constraintTop_toBottomOf="@+id/Address"
+        app:layout_constraintVertical_bias="0.365" />
+
+    <TextView
+        android:id="@+id/Address"
+        android:layout_width="234dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="200dp"
+        android:text="goduckdong"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/Link"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/LocationInfo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.586" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Time_List"
+        android:layout_width="293dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/RunningTime"
+        app:layout_constraintTop_toBottomOf="@+id/storeName">
+
+        <TextView
+            android:id="@+id/Time"
+            android:layout_width="248dp"
+            android:layout_height="34dp"
+            android:layout_marginEnd="24dp"
+            android:text="Monday-10 : 20~ 23 : 00"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
