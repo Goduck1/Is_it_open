@@ -13,6 +13,8 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         public void onProviderDisabled(String provider) {
         }
     };
+
 
 
 
