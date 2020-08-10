@@ -3,6 +3,8 @@ package com.example.isitopen;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.content.Context;
@@ -15,6 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +28,8 @@ public class SelectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
+
+        Button button = (Button)findViewById(R.id.button);
 
 
         //위치권한 받아오기
@@ -63,8 +68,19 @@ public class SelectActivity extends AppCompatActivity {
                     gpsLocationListener);
         }
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
+
+
     //현재 위치 받는 함수
     final LocationListener gpsLocationListener = new LocationListener() {
         public void onLocationChanged(Location location) {
@@ -90,10 +106,6 @@ public class SelectActivity extends AppCompatActivity {
         public void onProviderDisabled(String provider) {
         }
     };
-
-    public void onButtonToCafe(View v){
-        Toast.makeText(getApplicationContext(), "카페 ㄱㄱ", Toast.LENGTH_LONG).show();
-    }
 
     public void onButtonToConvenienceStore(View v){
         Toast.makeText(getApplicationContext(), "편의점 ㄱㄱ", Toast.LENGTH_LONG).show();
