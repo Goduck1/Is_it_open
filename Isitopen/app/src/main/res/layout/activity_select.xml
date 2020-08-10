@@ -6,13 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".SelectActivity">
 
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
     <Button
         android:id="@+id/button"
         android:layout_width="156dp"
         android:layout_height="98dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="36dp"
-        android:onClick="onButtonToCafe"
         android:text="카페"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +33,6 @@
         android:layout_height="98dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="36dp"
-        android:onClick="onButtonToConvenienceStore"
         android:text="편의점"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +43,6 @@
         android:layout_height="98dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="164dp"
-        android:onClick="onButtonToPharmacy"
         android:text="약국"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +53,6 @@
         android:layout_height="98dp"
         android:layout_marginTop="164dp"
         android:layout_marginEnd="36dp"
-        android:onClick="onButtonToAnimalHospital"
         android:text="동물병원"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
