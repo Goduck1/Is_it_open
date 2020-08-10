@@ -23,6 +23,7 @@ public class FilterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Button backButton;
+        Button Find;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
         this.InitializeViewD();
@@ -31,12 +32,24 @@ public class FilterActivity extends AppCompatActivity {
         this.InitializeViewT();
         this.InitializeListenerT();
 
+        //뒤로가기버튼
         backButton = (Button)findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
                 startActivity(intent);
-                finish();}
+                finish();
+            }
+        });
+
+        //찾았니? 버튼
+        Find = (Button)findViewById(R.id.Find);
+        Find.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+                startActivity(intent);
+                finish();
+            }
         });
 
     }
