@@ -29,16 +29,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        // 2초 딜레이 설정
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }, 2000);//2초
+//        // 2초 딜레이 설정
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                Intent intent = new Intent(getApplicationContext(), SelectActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        }, 2000);//2초
 
     }
 

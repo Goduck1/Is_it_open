@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!--네이버지도클라이언트ID지정-->
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="gcsa1k6js4" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
