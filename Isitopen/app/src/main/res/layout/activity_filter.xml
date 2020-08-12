@@ -11,8 +11,8 @@
         android:id="@+id/backButton"
         android:layout_width="40sp"
         android:layout_height="40sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/turkey_looking_left"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,10 +30,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Range"
         android:layout_width="60sp"
         android:layout_height="46dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="96dp"
         android:text="반경"
         android:textSize="20sp"
@@ -62,15 +62,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="251dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/Find"
+        app:layout_constraintStart_toEndOf="@+id/Range"
+        app:layout_constraintTop_toBottomOf="@+id/Time"
+        app:layout_constraintVertical_bias="0.524" />
+
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="115sp"
-        android:layout_height="35sp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="80dp"
-        android:gravity="left|center_vertical"
+        android:id="@+id/showRange"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="7dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/Find"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.242" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
