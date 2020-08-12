@@ -11,8 +11,12 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.SeekBar;
 
 public class FilterActivity extends AppCompatActivity {
+    SeekBar sb;
+    TextView tv;
+    int init=0;
 
     Button backButton;
     private TextView textView_Date;
@@ -47,6 +51,14 @@ public class FilterActivity extends AppCompatActivity {
 
         //public Info findinfo(typeN,null,date1,ts1,te1,null);
 
+        //seekbar 초기설정
+        tv=(TextView)findViewById(R.id.showRange);
+        sb=(SeekBar)findViewById(R.id.seekBar);
+        sb.setMax(2000);
+        sb.setProgress(init);
+        tv.setText(init+"m");
+
+
         //뒤로가기버튼
         backButton = (Button)findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener(){
@@ -57,7 +69,7 @@ public class FilterActivity extends AppCompatActivity {
             }
         });
 
-        //찾았니? 버튼
+        //열었니? 버튼
         Find = (Button)findViewById(R.id.Find);
         Find.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
@@ -67,6 +79,25 @@ public class FilterActivity extends AppCompatActivity {
             }
         });
 
+        //seekbar 움직임 받아서 거리 출력
+        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                int temp = (i / 50) * 50;
+
+                tv.setText(temp+"m");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     public void InitializeViewD(){
