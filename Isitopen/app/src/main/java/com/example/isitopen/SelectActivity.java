@@ -30,6 +30,10 @@ public class SelectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select);
 
         Button button = (Button)findViewById(R.id.button);
+        Button button2 = (Button)findViewById(R.id.button2);
+        Button button3 = (Button)findViewById(R.id.button3);
+        Button button4 = (Button)findViewById(R.id.button4);
+
 
 
         //위치권한 받아오기
@@ -43,6 +47,7 @@ public class SelectActivity extends AppCompatActivity {
                     0 );
         }
         else{
+
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             String provider = location.getProvider();
             double longitude = location.getLongitude();
@@ -72,6 +77,37 @@ public class SelectActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
+                intent.putExtra("value","카페");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
+                intent.putExtra("value","편의점");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
+                intent.putExtra("value","약국");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
+                intent.putExtra("value","동물병원");
                 startActivity(intent);
                 finish();
             }

@@ -19,6 +19,10 @@ public class FilterActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener callbackMethod;
     private TextView textView_Time;
     private TimePickerDialog.OnTimeSetListener callbackMethodT;
+    private TextView storeType;
+    int[] date1 =new int[3];
+    int[] ts1 = new int[2];
+    int[] te1 = new int[2];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +30,22 @@ public class FilterActivity extends AppCompatActivity {
         Button Find;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
+
+        // 가게종류 받아오기
+        Intent intent = getIntent();
+        String typeN = intent.getStringExtra("value");
+
+        storeType = findViewById(R.id.storetype);
+        storeType.setText(typeN); //가게종류 표기
+
+
         this.InitializeViewD();
         this.InitializeListenerD();
 
         this.InitializeViewT();
         this.InitializeListenerT();
+
+        //public Info findinfo(typeN,null,date1,ts1,te1,null);
 
         //뒤로가기버튼
         backButton = (Button)findViewById(R.id.backButton);
@@ -65,6 +80,9 @@ public class FilterActivity extends AppCompatActivity {
         callbackMethod = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
+                date1[0] = year;
+                date1[1] = month;
+                date1[2] = day;
                 textView_Date.setText(year + "년" + month + "월" + day + "일");
             }
         };
@@ -73,6 +91,8 @@ public class FilterActivity extends AppCompatActivity {
         callbackMethodT = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                ts1[0] = hourOfDay;
+                ts1[1] = minute;
                 textView_Time.setText(hourOfDay + "시" + minute + "분");
             }
         };
