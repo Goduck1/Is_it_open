@@ -61,6 +61,7 @@ public class FilterActivity extends AppCompatActivity {
         textView_Time = (TextView)findViewById(R.id.Time);
     }
 
+    //날짜입력함수
     public void InitializeListenerD(){
         callbackMethod = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -69,6 +70,7 @@ public class FilterActivity extends AppCompatActivity {
             }
         };
     }
+    //시간입력함수
     public void InitializeListenerT(){
         callbackMethodT = new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -78,10 +80,12 @@ public class FilterActivity extends AppCompatActivity {
         };
     }
 
+    //달력위젯불러오기
     public void OnClickHandler(View view){
         DatePickerDialog dialog = new DatePickerDialog(this, callbackMethod,2020,8,10);
         dialog.show();
     }
+    //시계위젯불러오기
     public void OnClickHandlerT(View view){
         TimePickerDialog dialogT = new TimePickerDialog(this, callbackMethodT,4,25,true);
         dialogT.show();
