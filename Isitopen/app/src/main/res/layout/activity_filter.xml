@@ -7,33 +7,46 @@
     android:layout_height="match_parent"
     tools:context=".FilterActivity">
 
+    <TextView
+        android:id="@+id/storetype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="findingname"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/backButton"
         android:layout_width="40sp"
         android:layout_height="40sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/turkey_looking_left"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Date"
-        android:layout_width="183dp"
-        android:layout_height="42dp"
+        android:layout_width="180sp"
+        android:layout_height="40sp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
         android:onClick="OnClickHandler"
         android:text="날짜"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+
+        android:id="@+id/Range"
         android:layout_width="60sp"
         android:layout_height="46dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="96dp"
         android:text="반경"
         android:textSize="20sp"
@@ -42,15 +55,15 @@
 
     <TextView
         android:id="@+id/Time"
-        android:layout_width="184dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginBottom="356dp"
+        android:layout_width="180sp"
+        android:layout_height="40sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
         android:onClick="OnClickHandlerT"
         android:text="시간"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Date" />
 
     <Button
         android:id="@+id/Find"
@@ -62,15 +75,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="251dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/Find"
+        app:layout_constraintStart_toEndOf="@+id/Range"
+        app:layout_constraintTop_toBottomOf="@+id/Time"
+        app:layout_constraintVertical_bias="0.524" />
+
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="115sp"
-        android:layout_height="35sp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="80dp"
-        android:gravity="left|center_vertical"
+
+        android:id="@+id/showRange"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="7dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/Find"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.242" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
