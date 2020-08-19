@@ -32,6 +32,8 @@ import java.util.List;
 import java.util.Locale;
 
 public class SelectActivity extends AppCompatActivity {
+    double[] array = new double[2];
+
     private GpsTracker gpsTracker;
 
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
@@ -54,6 +56,7 @@ public class SelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
                 intent.putExtra("value","카페");
+                intent.putExtra("loc",array);
                 startActivity(intent);
             }
         });
@@ -63,6 +66,7 @@ public class SelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
                 intent.putExtra("value","편의점");
+                intent.putExtra("loc",array);
                 startActivity(intent);
             }
         });
@@ -72,6 +76,7 @@ public class SelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
                 intent.putExtra("value","약국");
+                intent.putExtra("loc",array);
                 startActivity(intent);
             }
         });
@@ -81,6 +86,7 @@ public class SelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
                 intent.putExtra("value","동물병원");
+                intent.putExtra("loc",array);
                 startActivity(intent);
             }
         });
@@ -97,13 +103,13 @@ public class SelectActivity extends AppCompatActivity {
 
         gpsTracker = new GpsTracker(SelectActivity.this);
 
-        double latitude = gpsTracker.getLatitude();
-        double longitude = gpsTracker.getLongitude();
+        array[0] = gpsTracker.getLatitude();
+        array[1] = gpsTracker.getLongitude();
 
-        String address = getCurrentAddress(latitude, longitude);
+        String address = getCurrentAddress(array[0], array[1]);
         textview_address.setText(address);
 
-        Toast.makeText(SelectActivity.this, "현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
+        Toast.makeText(SelectActivity.this, "현재위치 \n위도 " + array[0] + "\n경도 " + array[1], Toast.LENGTH_LONG).show();
 
 
     }

@@ -39,6 +39,9 @@ public class FilterActivity extends AppCompatActivity {
         // 가게종류 받아오기
         Intent intent = getIntent();
         final String typeN = intent.getStringExtra("value");
+        final double[] array1 = intent.getDoubleArrayExtra("loc");
+
+
 
         storeType = findViewById(R.id.storetype);
         storeType.setText(typeN); //가게종류 표기
@@ -76,8 +79,11 @@ public class FilterActivity extends AppCompatActivity {
         Find.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+
                 Info findInfo = new Info(typeN,"name",date1,ts1,te1,"locate");
+                //현재위치 intent
                 intent.putExtra("class",findInfo);
+                intent.putExtra("loc",array1);
                 startActivity(intent);
                 finish();
             }

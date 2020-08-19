@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraPosition;
@@ -42,6 +43,8 @@ public class MapActivity extends FragmentActivity
         //Filter액티비티에서 받아온 Info 클래스
         Info finding = (Info) getIntent().getSerializableExtra("class");
 
+
+
     }
 
 
@@ -52,12 +55,18 @@ public class MapActivity extends FragmentActivity
         UiSettings uiSettings = naverMap.getUiSettings();
         uiSettings.setLocationButtonEnabled(true); // 기본값 : false
 
+
+        double[] nowLoc = getIntent().getDoubleArrayExtra("loc");
+        double latitude = nowLoc[0];
+        double longitude = nowLoc[1];
+
+        //마커표시
         Marker marker = new Marker();
-        marker.setPosition(new LatLng(37.5670135, 126.9783740));
+        marker.setPosition(new LatLng(nowLoc[0], nowLoc[1]));
         marker.setMap(naverMap);
 
         //카메라 초기 위치 설정
-        LatLng initialPosition = new LatLng(37.5534813,127.1377777);
+        LatLng initialPosition = new LatLng(nowLoc[0], nowLoc[1]);
         CameraUpdate cameraUpdate = CameraUpdate.scrollTo(initialPosition);
         naverMap.moveCamera(cameraUpdate);
 
