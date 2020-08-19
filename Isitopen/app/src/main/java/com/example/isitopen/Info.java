@@ -1,8 +1,9 @@
 package com.example.isitopen;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Info {
+public class Info implements Serializable {
     public String type; // 가게종류
     public String store; // 가게이름
     public int[] date = new int[3]; // 검색하려는날짜배열 (년,월,일)

@@ -79,7 +79,6 @@ public class SelectActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
                 intent.putExtra("value","카페");
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -89,7 +88,7 @@ public class SelectActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
                 intent.putExtra("value","편의점");
                 startActivity(intent);
-                finish();
+
             }
         });
 
@@ -99,7 +98,7 @@ public class SelectActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
                 intent.putExtra("value","약국");
                 startActivity(intent);
-                finish();
+
             }
         });
 
@@ -109,7 +108,7 @@ public class SelectActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
                 intent.putExtra("value","동물병원");
                 startActivity(intent);
-                finish();
+
             }
         });
 
