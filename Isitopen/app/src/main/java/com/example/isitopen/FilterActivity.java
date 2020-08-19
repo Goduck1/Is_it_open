@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -37,7 +38,7 @@ public class FilterActivity extends AppCompatActivity {
 
         // 가게종류 받아오기
         Intent intent = getIntent();
-        String typeN = intent.getStringExtra("value");
+        final String typeN = intent.getStringExtra("value");
 
         storeType = findViewById(R.id.storetype);
         storeType.setText(typeN); //가게종류 표기
@@ -49,7 +50,7 @@ public class FilterActivity extends AppCompatActivity {
         this.InitializeViewT();
         this.InitializeListenerT();
 
-        //public Info findinfo(typeN,null,date1,ts1,te1,null);
+
 
         //seekbar 초기설정
         tv=(TextView)findViewById(R.id.showRange);
@@ -69,11 +70,14 @@ public class FilterActivity extends AppCompatActivity {
             }
         });
 
+
         //열었니? 버튼
         Find = (Button)findViewById(R.id.Find);
         Find.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+                Info findInfo = new Info(typeN,"name",date1,ts1,te1,"locate");
+                intent.putExtra("class",findInfo);
                 startActivity(intent);
                 finish();
             }
@@ -98,6 +102,7 @@ public class FilterActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     public void InitializeViewD(){
