@@ -17,7 +17,7 @@ import android.widget.SeekBar;
 public class FilterActivity extends AppCompatActivity {
     SeekBar sb;
     TextView tv;
-    int init=0;
+    int init = 500;
 
     Button backButton;
     private TextView textView_Date;
@@ -28,6 +28,8 @@ public class FilterActivity extends AppCompatActivity {
     int[] date1 =new int[3];
     int[] ts1 = new int[2];
     int[] te1 = new int[2];
+
+    int passrange = 500; //map으로 반경넘기는변수
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,7 @@ public class FilterActivity extends AppCompatActivity {
         });
 
 
+
         //열었니? 버튼
         Find = (Button)findViewById(R.id.Find);
         Find.setOnClickListener(new View.OnClickListener(){
@@ -84,6 +87,7 @@ public class FilterActivity extends AppCompatActivity {
                 //현재위치 intent
                 intent.putExtra("class",findInfo);
                 intent.putExtra("loc",array1);
+                intent.putExtra("range",passrange);
                 startActivity(intent);
                 finish();
             }
@@ -92,8 +96,10 @@ public class FilterActivity extends AppCompatActivity {
         //seekbar 움직임 받아서 거리 출력
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                int temp = (i / 50) * 50;
+            public void onProgressChanged(SeekBar seekBar, int range, boolean b) {
+                int temp = (range / 50) * 50;
+
+                passrange = temp;
 
                 tv.setText(temp+"m");
             }
