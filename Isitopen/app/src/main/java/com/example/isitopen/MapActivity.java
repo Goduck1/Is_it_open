@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.UiSettings;
+import com.naver.maps.map.overlay.CircleOverlay;
 import com.naver.maps.map.overlay.Marker;
 
 import java.util.Vector;
@@ -59,6 +61,16 @@ public class MapActivity extends FragmentActivity
         Marker marker = new Marker();
         marker.setPosition(new LatLng(nowLoc[0], nowLoc[1]));
         marker.setMap(naverMap);
+
+        //서클오버레이(반경) 표시하기
+        CircleOverlay circle = new CircleOverlay();
+        circle.setCenter(new LatLng(latitude,longitude));
+        circle.setRadius(getIntent().getIntExtra("range",500)); // 받아오는 반경으로 변경하기
+        //circle.setRadius(500);
+        circle.setMap(naverMap);
+        circle.setColor(Color.TRANSPARENT);
+        circle.setOutlineColor(Color.BLACK);
+        circle.setOutlineWidth(2);
 
         //카메라 초기 위치 설정
         LatLng initialPosition = new LatLng(nowLoc[0], nowLoc[1]);
