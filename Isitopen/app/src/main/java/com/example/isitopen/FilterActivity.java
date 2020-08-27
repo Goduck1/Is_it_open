@@ -5,14 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.SeekBar;
+
+import java.io.IOException;
+import java.util.List;
 
 public class FilterActivity extends AppCompatActivity {
     SeekBar sb;
@@ -41,19 +47,49 @@ public class FilterActivity extends AppCompatActivity {
         final String typeN = intent.getStringExtra("value");
         final double[] array1 = intent.getDoubleArrayExtra("loc");
 
+        // 현위치 저장하는 배열 변환
+        TextView Nlocation = findViewById(R.id.nlocation);
+        Geocoder g = new Geocoder(this);
+        List<Address> address = null;
+        try {
+            address = g.getFromLocation(array1[0],array1[1],10);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("test","입출력오류");
+        }
+        if(address!=null){
+            if(address.size()==0){
+                Nlocation.setText("주소찾기 오류");
+            }else{
+                Log.d("찾은 주소",address.get(0).toString());
+                Nlocation.setText(address.get(0).getAddressLine(0));
+            }
+        }
+
+        // 서치버튼을 통해 위치 재설정
+        Button Sbutton = findViewById(R.id.searchBtn);
+        Sbutton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent3 = new Intent(getApplicationContext(), SearchMap.class);
+                intent3.putExtra("newloc",array1);
+                startActivity(intent3);
+            }
+        });
+
+        Intent intent4 = getIntent();
+//        final double[] array1 = intent4.getDoubleArrayExtra("loc");
+
+
 
 
         storeType = findViewById(R.id.storetype);
         storeType.setText(typeN); //가게종류 표기
-
 
         this.InitializeViewD();
         this.InitializeListenerD();
 
         this.InitializeViewT();
         this.InitializeListenerT();
-
-
 
         //seekbar 초기설정
         tv=(TextView)findViewById(R.id.showRange);

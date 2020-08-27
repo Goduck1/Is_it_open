@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraPosition;
 import com.naver.maps.map.CameraUpdate;
+import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
@@ -42,19 +43,13 @@ public class MapActivity extends FragmentActivity
 
         //Filter액티비티에서 받아온 Info 클래스
         Info finding = (Info) getIntent().getSerializableExtra("class");
-
-
-
     }
-
-
 
     @Override
     public void onMapReady(@NonNull final NaverMap naverMap) {
 
         UiSettings uiSettings = naverMap.getUiSettings();
         uiSettings.setLocationButtonEnabled(true); // 기본값 : false
-
 
         double[] nowLoc = getIntent().getDoubleArrayExtra("loc");
         double latitude = nowLoc[0];
@@ -70,6 +65,7 @@ public class MapActivity extends FragmentActivity
         CameraUpdate cameraUpdate = CameraUpdate.scrollTo(initialPosition);
         naverMap.moveCamera(cameraUpdate);
 
+        naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
     }
     // 마커 정보 저장시킬 변수들 선언
     private Vector<LatLng> markersPosition;
