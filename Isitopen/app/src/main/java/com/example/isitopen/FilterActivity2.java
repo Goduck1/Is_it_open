@@ -22,10 +22,9 @@ import com.naver.maps.geometry.LatLng;
 import java.io.IOException;
 import java.util.List;
 
-public class FilterActivity extends AppCompatActivity {
+public class FilterActivity2 extends AppCompatActivity {
     SeekBar sb;
     TextView tv;
-    int init = 500;
     int init=0;
     boolean isitclicked = false;
 
@@ -39,7 +38,6 @@ public class FilterActivity extends AppCompatActivity {
     int[] ts1 = new int[2];
     int[] te1 = new int[2];
 
-    int passrange = 500; //map으로 반경넘기는변수
     double[] array1 = new double[2];
     String typeN = new String();
 
@@ -48,12 +46,7 @@ public class FilterActivity extends AppCompatActivity {
         Button backButton;
         Button Find;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_filter);
-
-        // 가게종류 받아오기
-        Intent intent = getIntent();
-        array1 = intent.getDoubleArrayExtra("loc");
-        typeN = intent.getStringExtra("value");
+        setContentView(R.layout.activity_filter2);
 
         // 서치버튼을 통해 위치 재설정
         Button Sbutton = findViewById(R.id.searchBtn);
@@ -65,6 +58,11 @@ public class FilterActivity extends AppCompatActivity {
                 isitclicked = true;
             }
         });
+
+        // 가게종류 받아오기
+        Intent intent = getIntent();
+        array1 = intent.getDoubleArrayExtra("newloc");
+        typeN = intent.getStringExtra("newTypeN");
 
         // 현위치 저장하는 배열 변환
         TextView Nlocation = findViewById(R.id.nlocation);
@@ -84,6 +82,9 @@ public class FilterActivity extends AppCompatActivity {
                 Nlocation.setText(address.get(0).getAddressLine(0));
             }
         }
+
+
+
 
         storeType = findViewById(R.id.storetype);
         storeType.setText(typeN); //가게종류 표기
@@ -113,7 +114,6 @@ public class FilterActivity extends AppCompatActivity {
         });
 
 
-
         //열었니? 버튼
         Find = (Button)findViewById(R.id.Find);
         Find.setOnClickListener(new View.OnClickListener(){
@@ -124,7 +124,6 @@ public class FilterActivity extends AppCompatActivity {
                 //현재위치 intent
                 intent.putExtra("class",findInfo);
                 intent.putExtra("loc",array1);
-                intent.putExtra("range",passrange);
                 startActivity(intent);
                 finish();
             }
@@ -133,10 +132,8 @@ public class FilterActivity extends AppCompatActivity {
         //seekbar 움직임 받아서 거리 출력
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int range, boolean b) {
-                int temp = (range / 50) * 50;
-
-                passrange = temp;
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                int temp = (i / 50) * 50;
 
                 tv.setText(temp+"m");
             }

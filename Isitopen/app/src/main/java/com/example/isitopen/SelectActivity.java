@@ -27,6 +27,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.naver.maps.map.util.FusedLocationSource;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
@@ -110,7 +112,6 @@ public class SelectActivity extends AppCompatActivity {
         textview_address.setText(address);
 
         Toast.makeText(SelectActivity.this, "현재위치 \n위도 " + array[0] + "\n경도 " + array[1], Toast.LENGTH_LONG).show();
-
 
     }
 
