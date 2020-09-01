@@ -22,7 +22,7 @@ import com.naver.maps.geometry.LatLng;
 import java.io.IOException;
 import java.util.List;
 
-public class FilterActivity extends AppCompatActivity {
+public class FilterActivity2 extends AppCompatActivity {
     SeekBar sb;
     TextView tv;
     int init=0;
@@ -46,12 +46,7 @@ public class FilterActivity extends AppCompatActivity {
         Button backButton;
         Button Find;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_filter);
-
-        // 가게종류 받아오기
-        Intent intent = getIntent();
-        array1 = intent.getDoubleArrayExtra("loc");
-        typeN = intent.getStringExtra("value");
+        setContentView(R.layout.activity_filter2);
 
         // 서치버튼을 통해 위치 재설정
         Button Sbutton = findViewById(R.id.searchBtn);
@@ -63,6 +58,11 @@ public class FilterActivity extends AppCompatActivity {
                 isitclicked = true;
             }
         });
+
+        // 가게종류 받아오기
+        Intent intent = getIntent();
+        array1 = intent.getDoubleArrayExtra("newloc");
+        typeN = intent.getStringExtra("newTypeN");
 
         // 현위치 저장하는 배열 변환
         TextView Nlocation = findViewById(R.id.nlocation);
@@ -82,6 +82,9 @@ public class FilterActivity extends AppCompatActivity {
                 Nlocation.setText(address.get(0).getAddressLine(0));
             }
         }
+
+
+
 
         storeType = findViewById(R.id.storetype);
         storeType.setText(typeN); //가게종류 표기
