@@ -26,7 +26,6 @@ public class FilterActivity extends AppCompatActivity {
     SeekBar sb;
     TextView tv;
     int init = 500;
-    int init=0;
     boolean isitclicked = false;
 
     Button backButton;
