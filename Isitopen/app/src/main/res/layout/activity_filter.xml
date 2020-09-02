@@ -5,15 +5,15 @@
     android:id="@+id/frameLay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2FFF0057"
+    android:background="#FFFFFF"
     tools:context=".FilterActivity">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="48sp"
         android:layout_height="38sp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
         android:gravity="center_vertical"
         android:text="시간"
         android:textColor="#000000"
@@ -23,11 +23,11 @@
 
     <TextView
         android:id="@+id/storetype"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4sp"
+        android:layout_width="91dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16sp"
-        android:text="findingname"
+        android:text="N"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/backButton"
@@ -39,7 +39,7 @@
         android:layout_height="40sp"
         android:layout_marginStart="16sp"
         android:layout_marginTop="16sp"
-        android:background="@drawable/abc_vector_test"
+        android:background="@drawable/backbutton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,88 +73,54 @@
 
     <DatePicker
         android:id="@+id/datePicker"
-        android:layout_width="342dp"
-        android:layout_height="231dp"
+        android:layout_width="300sp"
+        android:layout_height="136sp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="64dp"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.623"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-
-        android:id="@+id/Range"
-        android:layout_width="48sp"
-        android:layout_height="38sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center_vertical"
-        android:text="반경"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Location" />
 
     <TimePicker
         android:id="@+id/timePicker"
-        android:layout_width="271dp"
-        android:layout_height="151dp"
-        android:layout_marginStart="96dp"
+        android:layout_width="300sp"
+        android:layout_height="136sp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="180dp"
         android:timePickerMode="spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datePicker" />
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+
         android:id="@+id/Find"
-        android:layout_width="326sp"
+        android:layout_width="380sp"
         android:layout_height="103sp"
         android:layout_marginBottom="24sp"
-        android:background="#41E91E63"
-        android:text="열었니?"
+        android:background="@drawable/button2"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="251sp"
         android:layout_height="45sp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toEndOf="@+id/Range"
         app:layout_constraintTop_toBottomOf="@+id/nlocation" />
-
-    <TextView
-        android:id="@+id/Location"
-        android:layout_width="48sp"
-        android:layout_height="38sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="76dp"
-        android:text="위치"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <Button
-        android:id="@+id/searchBtn"
-        android:layout_width="48sp"
-        android:layout_height="48sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="464dp"
-        android:background="@android:drawable/ic_menu_search"
-        app:layout_constraintStart_toEndOf="@+id/nlocation"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
 
         android:id="@+id/showRange"
         android:layout_width="73sp"
         android:layout_height="48sp"
-        android:layout_marginStart="8sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
         android:gravity="center_vertical"
         android:text="TextView"
         android:textColor="#000000"
@@ -162,29 +128,65 @@
         app:layout_constraintStart_toEndOf="@+id/seekBar"
         app:layout_constraintTop_toBottomOf="@+id/searchBtn" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/searchBtn"
         android:layout_width="48sp"
-        android:layout_height="38sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="148dp"
-        android:text="날짜"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="48sp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/ic_menu_search"
+        app:layout_constraintStart_toEndOf="@+id/nlocation"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
 
     <TextView
         android:id="@+id/nlocation"
         android:layout_width="224sp"
         android:layout_height="42sp"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:text="현위치"
         android:textColor="#000000"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Location"
         app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+
+    <TextView
+
+        android:id="@+id/Range"
+        android:layout_width="48sp"
+        android:layout_height="38sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_vertical"
+        android:text="반경"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Location" />
+
+    <TextView
+        android:id="@+id/Location"
+        android:layout_width="48sp"
+        android:layout_height="38sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:text="위치"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="48sp"
+        android:layout_height="38sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="108dp"
+        android:text="날짜"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
