@@ -36,6 +36,7 @@ implements OnMapReadyCallback {
     private InfoWindow infoWindow = new InfoWindow();
 
     String typeN = new String();
+
     @SuppressLint("ServiceCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ implements OnMapReadyCallback {
 
         Intent intent = getIntent();
         typeN = intent.getStringExtra("typename");
+
         locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
     }

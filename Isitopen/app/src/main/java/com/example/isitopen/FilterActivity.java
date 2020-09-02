@@ -49,10 +49,7 @@ public class FilterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
 
-        // 가게종류 받아오기
-        Intent intent = getIntent();
-        array1 = intent.getDoubleArrayExtra("loc");
-        typeN = intent.getStringExtra("value");
+
 
         // 서치버튼을 통해 위치 재설정
         Button Sbutton = findViewById(R.id.searchBtn);
@@ -64,6 +61,12 @@ public class FilterActivity extends AppCompatActivity {
                 isitclicked = true;
             }
         });
+
+
+        // 가게종류 받아오기
+        Intent intent = getIntent();
+        array1 = intent.getDoubleArrayExtra("loc");
+        typeN = intent.getStringExtra("value");
 
         // 현위치 저장하는 배열 변환
         TextView Nlocation = findViewById(R.id.nlocation);
@@ -151,6 +154,15 @@ public class FilterActivity extends AppCompatActivity {
             }
         });
 
+//        //timePicker의 시간 변경 사항을 감지
+//        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
+//        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+//            @Override
+//            public void onTimeChanged(TimePicker timePicker, int i, int i1) {
+//
+//            }
+//        });
+
     }
 
     public void InitializeViewD(){
@@ -192,6 +204,7 @@ public class FilterActivity extends AppCompatActivity {
     //시계위젯불러오기
     public void OnClickHandlerT(View view){
         TimePickerDialog dialogT = new TimePickerDialog(this, callbackMethodT,4,25,true);
+
         dialogT.show();
     }
 }

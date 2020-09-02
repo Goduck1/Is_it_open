@@ -65,6 +65,7 @@ public class FilterActivity2 extends AppCompatActivity {
         array1 = intent.getDoubleArrayExtra("newloc");
         typeN = intent.getStringExtra("newTypeN");
 
+
         // 현위치 저장하는 배열 변환
         TextView Nlocation = findViewById(R.id.nlocation);
         Geocoder g = new Geocoder(this);
