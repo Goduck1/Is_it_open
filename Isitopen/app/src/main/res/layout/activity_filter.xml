@@ -8,6 +8,50 @@
     android:background="#FFFFFF"
     tools:context=".FilterActivity">
 
+    <View
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="80dp"
+        android:background="#FFE500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
+    <View
+    android:layout_width="380dp"
+    android:layout_height="1dp"
+    android:layout_marginTop="188dp"
+    android:background="#FFE500"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"></View>
+
+
+    <View
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="316dp"
+        android:background="#FFE500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
+    <View
+    android:layout_width="380dp"
+    android:layout_height="1dp"
+    android:layout_marginTop="400dp"
+    android:background="#FFE500"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"></View>
+    <View
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="475dp"
+        android:background="#FFE500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="48sp"
