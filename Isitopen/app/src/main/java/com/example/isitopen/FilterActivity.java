@@ -90,7 +90,7 @@ public class FilterActivity extends AppCompatActivity {
         storeType = findViewById(R.id.storetype);
         storeType.setText(typeN); //가게종류 표기
 
-        this.InitializeViewD();
+        //this.InitializeViewD();
         this.InitializeListenerD();
 
         this.InitializeViewT();
@@ -154,20 +154,20 @@ public class FilterActivity extends AppCompatActivity {
             }
         });
 
-//        //timePicker의 시간 변경 사항을 감지
-//        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
-//        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-//            @Override
-//            public void onTimeChanged(TimePicker timePicker, int i, int i1) {
-//
-//            }
-//        });
+        //timePicker의 시간 변경 사항을 감지
+        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int i, int i1) {
+
+            }
+        });
 
     }
 
-    public void InitializeViewD(){
-        textView_Date = (TextView)findViewById(R.id.Date);
-    }
+//    public void InitializeViewD(){
+//        textView_Date = (TextView)findViewById(R.id.Date);
+//    }
     public void InitializeViewT(){
         textView_Time = (TextView)findViewById(R.id.Time);
     }

@@ -105,8 +105,8 @@ public class MapActivity extends FragmentActivity
         circle.setRadius(getIntent().getIntExtra("range",500)); // 받아오는 반경으로 변경하기
         //circle.setRadius(500);
         circle.setMap(naverMap);
-        circle.setColor(Color.TRANSPARENT);
-        circle.setOutlineColor(Color.BLACK);
+        circle.setColor(Color.parseColor("#15BFFF00"));
+        circle.setOutlineColor(Color.parseColor("#81C147"));
         circle.setOutlineWidth(2);
 
         //카메라 초기 위치 설정
