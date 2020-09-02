@@ -66,20 +66,20 @@ public class MapActivity extends FragmentActivity
                 requestCode, permissions, grantResults);
     }
 
-    public void onLocationChanged(Location location) {
-        if (naverMap == null || location == null) {
-            return;
-        }
-
-        LatLng coord = new LatLng(location);
-
-        LocationOverlay locationOverlay = naverMap.getLocationOverlay();
-        locationOverlay.setVisible(true);
-        locationOverlay.setPosition(coord);
-        locationOverlay.setBearing(location.getBearing());
-
-        naverMap.moveCamera(CameraUpdate.scrollTo(coord));
-    }
+//    public void onLocationChanged(Location location) {
+//        if (naverMap == null || location == null) {
+//            return;
+//        }
+//
+//        LatLng coord = new LatLng(location);
+//
+//        LocationOverlay locationOverlay = naverMap.getLocationOverlay();
+//        locationOverlay.setVisible(true);
+//        locationOverlay.setPosition(coord);
+//        locationOverlay.setBearing(location.getBearing());
+//
+//        naverMap.moveCamera(CameraUpdate.scrollTo(coord));
+//    }
 
     @Override
     public void onMapReady(@NonNull final NaverMap naverMap) {
@@ -87,7 +87,7 @@ public class MapActivity extends FragmentActivity
         UiSettings uiSettings = naverMap.getUiSettings();
         uiSettings.setLocationButtonEnabled(true); // 기본값 : false
         naverMap.setLocationSource(locationSource);
-        naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
+//        naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
 
 
         double[] nowLoc = getIntent().getDoubleArrayExtra("loc");
@@ -120,11 +120,5 @@ public class MapActivity extends FragmentActivity
     private Vector<LatLng> markersPosition;
     private Vector<Marker> activeMarkers;
 
-
-    // 현재 카메라가 보고있는 위치
-    public LatLng getCurrentPosition(NaverMap naverMap) {
-        CameraPosition cameraPosition = naverMap.getCameraPosition();
-        return new LatLng(cameraPosition.target.latitude, cameraPosition.target.longitude);
-    }
 
 }
