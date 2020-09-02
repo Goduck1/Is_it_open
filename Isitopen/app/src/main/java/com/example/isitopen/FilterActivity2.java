@@ -25,7 +25,7 @@ import java.util.List;
 public class FilterActivity2 extends AppCompatActivity {
     SeekBar sb;
     TextView tv;
-    int init=0;
+    int init = 500;
     boolean isitclicked = false;
 
     Button backButton;
@@ -38,6 +38,7 @@ public class FilterActivity2 extends AppCompatActivity {
     int[] ts1 = new int[2];
     int[] te1 = new int[2];
 
+    int passrange = 500; //map으로 반경넘기는변수
     double[] array1 = new double[2];
     String typeN = new String();
 
@@ -124,6 +125,7 @@ public class FilterActivity2 extends AppCompatActivity {
                 //현재위치 intent
                 intent.putExtra("class",findInfo);
                 intent.putExtra("loc",array1);
+                intent.putExtra("range",passrange);
                 startActivity(intent);
                 finish();
             }
@@ -134,6 +136,8 @@ public class FilterActivity2 extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 int temp = (i / 50) * 50;
+
+                passrange = temp;
 
                 tv.setText(temp+"m");
             }
