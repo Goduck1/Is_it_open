@@ -125,9 +125,9 @@ implements OnMapReadyCallback {
                 marker.setOnClickListener(new Overlay.OnClickListener() {
                     @Override
                     public boolean onClick(@NonNull Overlay overlay) {
-                        Intent intent = new Intent(getApplicationContext(), FilterActivity2.class);
-                        intent.putExtra("newloc",array);
-                        intent.putExtra("newTypeN",typeN);
+                        Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
+                        intent.putExtra("loc",array);
+                        intent.putExtra("value",typeN);
                         startActivity(intent);
                         finish();
                         return false;
