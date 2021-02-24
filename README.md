@@ -1,6 +1,7 @@
-# Is_it_open
-2020.08.06
-솔직챌린지시작
-깃허브 공부
-솔직챌린지시작!
-dk
+# Isitopen?(열었니?) Android Application
+
+---
+
+Begin : 2020.08.06
+
+Our APP provide a service that tells the opening hours of the store.
